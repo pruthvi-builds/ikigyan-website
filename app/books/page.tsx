@@ -25,7 +25,38 @@ export default function BooksPage() {
         <section className="bg-cream pb-24">
           <div className="container-wide flex flex-col gap-14">
             {books.map((book, i) => (
-              <Reveal key={book.slug} delay={i * 0.08}>
+              <div key={book.slug} className="flex flex-col gap-10">
+                <Reveal delay={i * 0.08}>
+                  <div className="rounded-[28px] border border-line bg-cream-deep/40 p-8 sm:p-11">
+                    <span className="w-fit rounded-full bg-teal/10 px-3 py-1 font-body text-[11px] font-semibold uppercase tracking-[0.1em] text-teal">
+                      {book.intro.badge}
+                    </span>
+                    <h2 className="mt-4 font-display text-[24px] leading-tight text-ink sm:text-[28px]">
+                      {book.title}
+                    </h2>
+                    <p className="mt-1.5 font-body text-[15px] font-semibold text-teal">
+                      {book.intro.strapline}
+                    </p>
+                    <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-relaxed text-ink-soft">
+                      {book.intro.description}
+                    </p>
+
+                    <div className="mt-7 grid grid-cols-1 gap-6 border-t border-line pt-6 sm:grid-cols-3">
+                      {book.audiences.map((a) => (
+                        <div key={a.label}>
+                          <p className="font-body text-[12.5px] font-semibold text-teal">
+                            {a.label}
+                          </p>
+                          <p className="mt-1 font-body text-[12.5px] leading-relaxed text-ink-soft">
+                            {a.copy}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Reveal>
+
+                <Reveal delay={i * 0.08 + 0.06}>
                 <div className="grid gap-8 overflow-hidden rounded-[28px] border border-line bg-cream-deep/40 sm:grid-cols-[1fr_1.2fr]">
                   <div className="relative aspect-[4/3] w-full bg-cream-hero sm:aspect-auto">
                     <Image
@@ -105,22 +136,10 @@ export default function BooksPage() {
                         Bulk / School Orders <span aria-hidden>→</span>
                       </a>
                     </div>
-
-                    <div className="mt-8 grid grid-cols-1 gap-4 border-t border-line pt-6 sm:grid-cols-3">
-                      {book.audiences.map((a) => (
-                        <div key={a.label}>
-                          <p className="font-body text-[12.5px] font-semibold text-teal">
-                            {a.label}
-                          </p>
-                          <p className="mt-1 font-body text-[12.5px] leading-relaxed text-ink-soft">
-                            {a.copy}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </Reveal>
+              </div>
             ))}
 
             <Reveal delay={0.2}>

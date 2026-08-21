@@ -92,6 +92,12 @@ export const books = [
     subtitle: "Financial & Economic Awareness for Young Minds",
     tagline: "Where money meets real life.",
     headline: "From the story of money to managing your own.",
+    intro: {
+      badge: "Book 01 · Where Financial Confidence Begins",
+      strapline: "Building money confidence and economic awareness from an early age.",
+      description:
+        "Educonomy helps young minds understand money, choices and the world around them through simple, engaging lessons. It turns essential financial and economic ideas into practical knowledge children can use in everyday life.",
+    },
     image: "/illustrations/hero-money-tree.png",
     imageAlt: "A tree growing rupee coins above an open book and a stack of coins beside an Ikigyan money pouch.",
     // Short — used on the homepage teaser card.
@@ -118,8 +124,8 @@ export const books = [
       "Available for classroom, library and bulk requirements",
     ],
     audiences: [
-      { label: "For Students", copy: "Learn useful real-world concepts beyond textbooks." },
-      { label: "For Parents", copy: "Start meaningful conversations about money and everyday choices." },
+      { label: "For Students", copy: "Build confidence with money, choices and real-world thinking." },
+      { label: "For Parents", copy: "Make everyday money moments meaningful with simple ideas to explore together." },
       { label: "For Schools", copy: "Available for classroom, library and bulk requirements." },
     ],
   },

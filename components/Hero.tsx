@@ -8,6 +8,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import { CONTACT } from "@/lib/data";
 
 type Slide = {
   eyebrow: string;
@@ -23,17 +24,20 @@ type Slide = {
 // (financial literacy · mental health · digital awareness), 3–5) related.
 const SLIDES: Slide[] = [
   {
-    eyebrow: "Educonomy · Book 01",
+    eyebrow: "Book 01 · Where Financial Confidence Begins",
     heading: (
       <>
-        Money lessons your child
-        <br />
-        will <span className="text-teal">actually want</span> to read.
+        Give your child
+        <br />a <span className="text-teal">head start</span> with money.
       </>
     ),
-    copy: "Educonomy turns saving, spending and smart choices into a story kids can't put down. Order your copy today.",
+    copy: "Educonomy turns saving, spending, earning and smart choices into an engaging story children will actually enjoy reading.",
     primary: { label: "Order Educonomy", href: "#books" },
-    secondary: { label: "Order on WhatsApp", href: "https://wa.me/", external: true },
+    secondary: {
+      label: "Order on WhatsApp",
+      href: `https://wa.me/${CONTACT.whatsapp}`,
+      external: true,
+    },
     src: "/illustrations/hero-money-tree.png",
     alt: "A tree growing rupee coins above an open book and a stack of coins beside an Ikigyan money pouch.",
   },
@@ -56,12 +60,12 @@ const SLIDES: Slide[] = [
     eyebrow: "For Schools",
     heading: (
       <>
-        A 26-week journey,
+        26 weeks of Curiosity,
         <br />
-        not a <span className="text-teal">one-off workshop.</span>
+        <span className="text-teal">Growth and Discovery.</span>
       </>
     ),
-    copy: "Two free demo classes, then a full year of weekly curiosity sessions and activities built for the classroom.",
+    copy: "Two free demo classes to begin. A full year of weekly experiences designed to engage, inspire and empower students.",
     primary: { label: "Explore the Programme", href: "#schools" },
     secondary: { label: "Book 2 Free Demo Classes", href: "#schools" },
     src: "/illustrations/hero-journey.png",
