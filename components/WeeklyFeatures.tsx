@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "./Reveal";
+import weekly from "@/content/weekly.json";
 
 function DidYouKnowCard() {
   const [flipped, setFlipped] = useState(false);
@@ -29,7 +30,7 @@ function DidYouKnowCard() {
             exit={{ opacity: 0 }}
             className="font-display text-[24px] leading-snug text-ink md:text-[26px]"
           >
-            What was the world&rsquo;s first form of money made from?
+            {weekly.didYouKnow.question}
           </motion.p>
         ) : (
           <motion.p
@@ -39,9 +40,7 @@ function DidYouKnowCard() {
             exit={{ opacity: 0 }}
             className="font-body text-[16px] leading-relaxed text-ink-soft"
           >
-            The earliest coins were struck over 2,600 years ago in ancient
-            Lydia, from <em>electrum</em> — a natural blend of gold and
-            silver panned straight from riverbeds.
+            {weekly.didYouKnow.answer}
           </motion.p>
         )}
       </AnimatePresence>
@@ -63,11 +62,10 @@ function CuriosityOfWeekCard() {
         <span className="font-display text-[20px] text-yellow-soft">?</span>
       </div>
       <p className="font-display text-[24px] leading-snug md:text-[26px]">
-        Why does the sky turn orange at sunset, but stay blue all afternoon?
+        {weekly.curiosity.question}
       </p>
       <p className="font-body text-[13.5px] leading-relaxed text-cream/70">
-        One question, explored properly, every single week — in the app and
-        in class.
+        {weekly.curiosity.note}
       </p>
     </div>
   );
@@ -88,8 +86,7 @@ function PuzzleOfWeekCard() {
 
       <div>
         <p className="font-display text-[21px] leading-snug text-ink md:text-[23px]">
-          I have cities, but no houses. I have mountains, but no trees. I
-          have water, but no fish. What am I?
+          {weekly.puzzle.question}
         </p>
         <AnimatePresence>
           {stage >= 1 && (
@@ -98,7 +95,7 @@ function PuzzleOfWeekCard() {
               animate={{ opacity: 1, height: "auto" }}
               className="mt-3 font-body text-[14px] text-ink-soft"
             >
-              Hint: you use me to find your way.
+              {weekly.puzzle.hint}
             </motion.p>
           )}
           {stage === 2 && (
@@ -107,7 +104,7 @@ function PuzzleOfWeekCard() {
               animate={{ opacity: 1, y: 0 }}
               className="mt-3 font-body text-[15px] font-semibold text-teal"
             >
-              Answer: a map.
+              {weekly.puzzle.answer}
             </motion.p>
           )}
         </AnimatePresence>
@@ -130,12 +127,12 @@ export default function WeeklyFeatures() {
         <div className="max-w-2xl">
           <Reveal>
             <p className="font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-teal">
-              Fresh every week
+              {weekly.eyebrow}
             </p>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mt-5 font-display text-[32px] leading-[1.14] tracking-[-0.01em] text-ink text-balance sm:text-[40px] md:text-[46px]">
-              Small doses of wonder, on repeat.
+              {weekly.heading}
             </h2>
           </Reveal>
         </div>

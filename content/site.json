@@ -1,0 +1,15 @@
+{
+  "contact": {
+    "phone": "+919513464111",
+    "whatsapp": "919513464111",
+    "email": "hello@ikigyan.com"
+  },
+  "footerTagline": "Helping children discover the world beyond textbooks.",
+  "footerSignoff": "Curiosity today. Capability for tomorrow.",
+  "social": [
+    { "label": "Instagram", "href": "#" },
+    { "label": "Facebook", "href": "#" },
+    { "label": "YouTube", "href": "#" },
+    { "label": "LinkedIn", "href": "#" }
+  ]
+}

@@ -1,5 +1,8 @@
 import Reveal from "./Reveal";
 import { videos } from "@/lib/data";
+import home from "@/content/pages/home.json";
+
+const c = home.watchDiscover;
 
 export default function WatchDiscover() {
   const featured = videos.slice(0, 3);
@@ -11,12 +14,12 @@ export default function WatchDiscover() {
           <div className="max-w-xl">
             <Reveal>
               <p className="font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-teal">
-                Watch &amp; Discover
+                {c.eyebrow}
               </p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="mt-4 font-display text-[26px] leading-[1.16] tracking-[-0.01em] text-ink text-balance sm:text-[30px]">
-                A curated shelf, not an endless feed.
+                {c.heading}
               </h2>
             </Reveal>
           </div>
@@ -25,7 +28,7 @@ export default function WatchDiscover() {
               href="/watch"
               className="inline-flex w-fit items-center gap-2 rounded-full border border-ink/15 px-5 py-3 font-body text-[13.5px] font-semibold text-ink transition-colors hover:border-teal hover:text-teal"
             >
-              View More <span aria-hidden>→</span>
+              {c.ctaLabel} <span aria-hidden>→</span>
             </a>
           </Reveal>
         </div>

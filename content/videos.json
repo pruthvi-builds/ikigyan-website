@@ -1,0 +1,13 @@
+{
+  "items": [
+    { "topic": "How volcanoes shape the Earth", "source": "Curated · Nat Geo Kids", "age": "Ages 7–11", "category": "Space & Science" },
+    { "topic": "The economics of a lemonade stand", "source": "Curated · TED-Ed", "age": "Ages 9–13", "category": "Financial Literacy" },
+    { "topic": "Why we dream", "source": "Curated · SciShow Kids", "age": "Ages 6–10", "category": "Human Body & Mind" },
+    { "topic": "The history of the printing press", "source": "Curated · Crash Course Kids", "age": "Ages 9–13", "category": "History & Civilisations" },
+    { "topic": "How your brain handles big feelings", "source": "Curated · SciShow Kids", "age": "Ages 7–11", "category": "Emotional Wellbeing" },
+    { "topic": "What makes a good password?", "source": "Curated · Common Sense Education", "age": "Ages 9–13", "category": "Digital Literacy" },
+    { "topic": "The water cycle, explained simply", "source": "Curated · Nat Geo Kids", "age": "Ages 6–10", "category": "Space & Science" },
+    { "topic": "Why do we need sleep?", "source": "Curated · TED-Ed", "age": "Ages 8–12", "category": "Physical Wellness" },
+    { "topic": "How money moves around the world", "source": "Curated · TED-Ed", "age": "Ages 10–13", "category": "Financial Literacy" }
+  ]
+}

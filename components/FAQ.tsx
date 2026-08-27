@@ -3,7 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "./Reveal";
-import { faqs } from "@/lib/data";
+import { faqs, CONTACT } from "@/lib/data";
+import faqCopy from "@/content/pages/faq.json";
+
+const c = faqCopy.section;
 
 export default function FAQ({ limit }: { limit?: number }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -16,14 +19,14 @@ export default function FAQ({ limit }: { limit?: number }) {
           <div>
             <Reveal>
               <p className="font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-teal">
-                FAQ
+                {c.eyebrow}
               </p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className={`mt-4 font-display leading-[1.16] tracking-[-0.01em] text-ink text-balance ${
                 limit ? "text-[26px] sm:text-[30px]" : "text-[32px] sm:text-[40px] md:text-[46px]"
               }`}>
-                Questions parents and schools ask us.
+                {c.heading}
               </h2>
             </Reveal>
           </div>
@@ -82,11 +85,11 @@ export default function FAQ({ limit }: { limit?: number }) {
 
         <Reveal delay={0.15}>
           <p className="mt-10 font-body text-[14.5px] text-ink-soft">
-            Still need help?{" "}
-            <a href="mailto:hello@ikigyan.com" className="font-semibold text-teal">
-              Email us
+            {c.helpPrefix}{" "}
+            <a href={`mailto:${CONTACT.email}`} className="font-semibold text-teal">
+              {c.helpLinkLabel}
             </a>{" "}
-            — we usually reply within a day.
+            {c.helpSuffix}
           </p>
         </Reveal>
       </div>

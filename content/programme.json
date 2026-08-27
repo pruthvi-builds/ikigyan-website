@@ -1,0 +1,19 @@
+{
+  "steps": [
+    { "n": "01", "title": "2 Free Demo Classes", "copy": "Schools experience Ikigyan first-hand, no commitment required." },
+    { "n": "02", "title": "School Onboarding", "copy": "A simple, structured setup for classrooms and teachers." },
+    { "n": "03", "title": "26-Week Curriculum", "copy": "A full academic year of curiosity, mapped week by week." },
+    { "n": "04", "title": "Weekly Curiosity Sessions", "copy": "One interesting question or idea explored deeply each week." },
+    { "n": "05", "title": "Activities & Puzzles", "copy": "Hands-on thinking, not passive listening." },
+    { "n": "06", "title": "Real-World Knowledge", "copy": "Concepts children can actually use outside class." },
+    { "n": "07", "title": "Progressive Learning", "copy": "Each week builds on the last — curiosity compounds." }
+  ],
+  "offer": [
+    "26-week structured programme",
+    "2 free demo classes",
+    "Books for classroom & library",
+    "Bulk order pricing",
+    "Teacher & classroom resources",
+    "Printable activities"
+  ]
+}

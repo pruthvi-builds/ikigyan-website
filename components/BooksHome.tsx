@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
 import { books, CONTACT } from "@/lib/data";
+import home from "@/content/pages/home.json";
+
+const c = home.booksHome;
 
 export default function BooksHome() {
   const book = books[0];
@@ -12,12 +15,12 @@ export default function BooksHome() {
           <div>
             <Reveal>
               <p className="font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-teal">
-                Books
+                {c.eyebrow}
               </p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="mt-4 font-display text-[26px] leading-[1.16] tracking-[-0.01em] text-ink text-balance sm:text-[30px]">
-                Knowledge resources for children.
+                {c.heading}
               </h2>
             </Reveal>
           </div>
@@ -26,7 +29,7 @@ export default function BooksHome() {
               href="/books"
               className="inline-flex w-fit items-center gap-2 rounded-full border border-ink/15 px-5 py-3 font-body text-[13.5px] font-semibold text-ink transition-colors hover:border-teal hover:text-teal"
             >
-              View More <span aria-hidden>→</span>
+              {c.ctaLabel} <span aria-hidden>→</span>
             </a>
           </Reveal>
         </div>
