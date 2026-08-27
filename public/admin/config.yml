@@ -11,9 +11,9 @@ backend:
   name: github
   repo: pruthvi-builds/ikigyan-website
   branch: main
-  # GitHub sign-in is handled by this site's own Netlify functions
-  # (see /netlify/functions/oauth-*.js). If you move to a custom domain,
-  # update base_url to that domain.
+  # GitHub sign-in is handled by this app's own routes
+  # (app/oauth/auth + app/oauth/callback). base_url must be the domain you
+  # open /admin/ on; update it if the domain changes.
   base_url: https://ikigyan.com
   auth_endpoint: /oauth/auth
 
