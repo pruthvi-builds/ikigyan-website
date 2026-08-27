@@ -1,3 +1,25 @@
 [build]
   command = "npm run build"
   publish = ".next"
+
+# --- Ikigyan CMS (Sveltia) --------------------------------------------------
+# GitHub OAuth is handled by two small functions bundled in this repo
+# (netlify/functions/oauth-*.js) so there is no third-party service to depend on.
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/oauth/auth"
+  to = "/.netlify/functions/oauth-auth"
+  status = 200
+
+[[redirects]]
+  from = "/oauth/callback"
+  to = "/.netlify/functions/oauth-callback"
+  status = 200
+
+# Pretty URL for the editor: /admin -> /admin/ (index.html)
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 301

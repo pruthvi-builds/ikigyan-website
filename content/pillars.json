@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "key": "financial",
+      "label": "Financial Literacy",
+      "outcome": "Money Smart",
+      "copy": "Money, saving, spending, needs vs. wants, banking and smart choices."
+    },
+    {
+      "key": "emotional",
+      "label": "Emotional Wellbeing",
+      "outcome": "Mind Strong",
+      "copy": "Emotions, confidence, resilience, stress and self-awareness."
+    },
+    {
+      "key": "physical",
+      "label": "Physical Wellness",
+      "outcome": "Healthy Living",
+      "copy": "Nutrition, exercise, sleep, hygiene and healthy habits."
+    },
+    {
+      "key": "social",
+      "label": "Social Awareness",
+      "outcome": "Better Together",
+      "copy": "Friendships, communication, empathy, boundaries, teamwork."
+    },
+    {
+      "key": "digital",
+      "label": "Digital Literacy",
+      "outcome": "Future Ready",
+      "copy": "Online safety, privacy, misinformation and AI awareness."
+    }
+  ]
+}

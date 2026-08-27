@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import Pillars from "@/components/Pillars";
 import ExploreCategories from "@/components/ExploreCategories";
+import explore from "@/content/pages/explore.json";
 
 export const metadata: Metadata = {
   title: "Explore — Ikigyan",
@@ -17,9 +18,9 @@ export default function ExplorePage() {
       <Nav />
       <main className="flex-1">
         <PageHeader
-          eyebrow="Explore"
-          title="Real-world learning, one curious topic at a time."
-          copy="Everything we teach starts from five real-world pillars, and branches into dozens of curiosity-led topics."
+          eyebrow={explore.header.eyebrow}
+          title={explore.header.title}
+          copy={explore.header.copy}
         />
         <Pillars />
         <ExploreCategories />

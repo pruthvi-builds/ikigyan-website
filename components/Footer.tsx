@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { socialLinks } from "@/lib/data";
+import { socialLinks, siteMeta } from "@/lib/data";
 
 const COLS = [
   {
@@ -69,7 +69,7 @@ export default function Footer() {
               className="h-14 w-auto brightness-0 invert md:h-16"
             />
             <p className="mt-5 font-body text-[14px] leading-relaxed text-cream/60">
-              Helping children discover the world beyond textbooks.
+              {siteMeta.footerTagline}
             </p>
 
             <div className="mt-6 flex items-center gap-3">
@@ -116,7 +116,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Ikigyan. All rights reserved.
           </p>
           <p className="font-display text-[13px] font-semibold text-cream/45">
-            Curiosity today. Capability for tomorrow.
+            {siteMeta.footerSignoff}
           </p>
         </div>
       </div>

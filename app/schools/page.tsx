@@ -4,7 +4,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
-import { programmeSteps, schoolOffer } from "@/lib/data";
+import { programmeSteps, schoolOffer, CONTACT } from "@/lib/data";
+import schools from "@/content/pages/schools.json";
 
 export const metadata: Metadata = {
   title: "For Schools — Ikigyan",
@@ -18,9 +19,9 @@ export default function SchoolsPage() {
       <Nav />
       <main className="flex-1">
         <PageHeader
-          eyebrow="For schools"
-          title="Bringing real-world learning into the classroom."
-          copy="A structured 26-week programme that complements academic learning with essential life skills. Ikigyan gives teachers ready-to-use learning experiences, activities and resources that help children discover, think and apply knowledge beyond the textbook."
+          eyebrow={schools.header.eyebrow}
+          title={schools.header.title}
+          copy={schools.header.copy}
         />
 
         <section className="bg-cream py-16 md:py-24">
@@ -28,8 +29,8 @@ export default function SchoolsPage() {
             <Reveal className="lg:sticky lg:top-28 lg:self-start">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[28px] bg-cream-hero">
                 <Image
-                  src="/illustrations/hero-journey.png"
-                  alt="A winding path connecting a school, a calendar, a puzzle book, a globe and a child climbing stairs made of books toward a star, illustrating the 26-week programme."
+                  src={schools.journey.image}
+                  alt={schools.journey.imageAlt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover"
@@ -40,12 +41,12 @@ export default function SchoolsPage() {
             <div>
               <Reveal>
                 <p className="font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-teal">
-                  The journey
+                  {schools.journey.eyebrow}
                 </p>
               </Reveal>
               <Reveal delay={0.06}>
                 <h2 className="mt-3 font-display text-[26px] leading-[1.16] tracking-[-0.01em] text-ink sm:text-[30px]">
-                  The 26-week Ikigyan learning journey.
+                  {schools.journey.heading}
                 </h2>
               </Reveal>
 
@@ -85,28 +86,28 @@ export default function SchoolsPage() {
             <div>
               <Reveal>
                 <p className="font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-yellow">
-                  What&rsquo;s included
+                  {schools.included.eyebrow}
                 </p>
               </Reveal>
               <Reveal delay={0.08}>
                 <h2 className="mt-4 font-display text-[26px] leading-[1.16] tracking-[-0.01em] text-balance sm:text-[30px]">
-                  Everything a school needs to get started.
+                  {schools.included.heading}
                 </h2>
               </Reveal>
 
               <Reveal delay={0.2}>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a
-                    href={`mailto:hello@ikigyan.com?subject=School%20Partnership%20Enquiry`}
+                    href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(schools.included.primarySubject)}`}
                     className="rounded-full bg-yellow px-6 py-3.5 font-body text-[14px] font-semibold text-ink transition-transform hover:-translate-y-0.5"
                   >
-                    School Partnership Enquiry
+                    {schools.included.primaryLabel}
                   </a>
                   <a
-                    href={`mailto:hello@ikigyan.com?subject=Book%202%20Free%20Demo%20Classes`}
+                    href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(schools.included.secondarySubject)}`}
                     className="rounded-full border border-cream/25 px-6 py-3.5 font-body text-[14px] font-semibold text-cream transition-colors hover:border-cream/60"
                   >
-                    Book 2 Free Demo Classes
+                    {schools.included.secondaryLabel}
                   </a>
                 </div>
               </Reveal>

@@ -1,0 +1,49 @@
+{
+  "whatIs": {
+    "eyebrow": "What is Ikigyan",
+    "headingLead": "Some of life’s most important lessons",
+    "headingHighlight": "aren’t in the textbook.",
+    "para1": "Ikigyan is a children’s learning and knowledge platform designed to prepare young minds for the real world. We bring together essential life skills — financial literacy, mental and emotional wellbeing, digital awareness, physical wellness and social awareness — through engaging, age-appropriate learning experiences.",
+    "para2": "Our approach goes beyond traditional academics. Through stories, activities, puzzles, projects and curiosity-led exploration, children learn to Discover → Question → Think → Apply — turning knowledge into understanding, and understanding into everyday life skills.",
+    "stats": [
+      { "n": "26", "u": "weeks", "d": "of guided curiosity, mapped for schools" },
+      { "n": "5", "u": "pillars", "d": "of real-world learning, side by side" },
+      { "n": "1", "u": "method", "d": "Discover → Question → Think → Apply" }
+    ]
+  },
+  "exploreTeaser": {
+    "eyebrow": "What children explore",
+    "heading": "Five ways to understand the world, side by side.",
+    "ctaLabel": "View More"
+  },
+  "schoolsHome": {
+    "eyebrow": "For schools",
+    "heading": "Bringing real-world learning into the classroom.",
+    "copy": "A structured 26-week programme that complements academic learning with essential life skills. Ikigyan gives teachers ready-to-use learning experiences, activities and resources that help children discover, think and apply knowledge beyond the textbook.",
+    "primaryLabel": "View the Full Programme",
+    "secondaryLabel": "Book 2 Free Demo Classes",
+    "facts": [
+      { "n": "26", "u": "weeks", "d": "full curriculum, mapped week by week" },
+      { "n": "2", "u": "free classes", "d": "no commitment demo sessions" },
+      { "n": "1", "u": "method", "d": "Discover → Question → Think → Apply" }
+    ]
+  },
+  "booksHome": {
+    "eyebrow": "Books",
+    "heading": "Knowledge resources for children.",
+    "ctaLabel": "View More"
+  },
+  "watchDiscover": {
+    "eyebrow": "Watch & Discover",
+    "heading": "A curated shelf, not an endless feed.",
+    "ctaLabel": "View More"
+  },
+  "finalCta": {
+    "eyebrow": "The Ikigyan promise",
+    "headingLead": "Curiosity today.",
+    "headingHighlight": "Capability for tomorrow.",
+    "copy": "Building children who are financially confident, emotionally aware, physically healthy, socially responsible and digitally ready. Ikigyan — helping children discover the world beyond textbooks.",
+    "primaryLabel": "Bring Ikigyan to Your School",
+    "secondaryLabel": "Order the Book"
+  }
+}

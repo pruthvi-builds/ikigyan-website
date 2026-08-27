@@ -1,107 +1,40 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import {
   motion,
   useMotionValue,
   useSpring,
   useTransform,
 } from "framer-motion";
-import { CONTACT } from "@/lib/data";
+import heroData from "@/content/hero.json";
 
-type Slide = {
-  eyebrow: string;
-  heading: React.ReactNode;
-  copy: string;
-  primary: { label: string; href: string; external?: boolean };
-  secondary: { label: string; href: string; external?: boolean };
-  src: string;
-  alt: string;
-};
+const SLIDES = heroData.slides;
+const AUTOPLAY_MS = (heroData.autoplaySeconds || 6) * 1000;
 
-// 5 slides per the brief: 1) sales/order, 2) curriculum structure
-// (financial literacy · mental health · digital awareness), 3–5) related.
-const SLIDES: Slide[] = [
-  {
-    eyebrow: "Book 01 · Where Financial Confidence Begins",
-    heading: (
-      <>
-        Give your child
-        <br />a <span className="text-teal">head start</span> with money.
-      </>
-    ),
-    copy: "Educonomy turns saving, spending, earning and smart choices into an engaging story children will actually enjoy reading.",
-    primary: { label: "Order Educonomy", href: "#books" },
-    secondary: {
-      label: "Order on WhatsApp",
-      href: `https://wa.me/${CONTACT.whatsapp}`,
-      external: true,
-    },
-    src: "/illustrations/hero-money-tree.png",
-    alt: "A tree growing rupee coins above an open book and a stack of coins beside an Ikigyan money pouch.",
-  },
-  {
-    eyebrow: "The Curriculum",
-    heading: (
-      <>
-        One curriculum.
-        <br />
-        <span className="text-teal">Five real-world subjects.</span>
-      </>
-    ),
-    copy: "Financial literacy, mental & emotional wellbeing and digital awareness — taught side by side with physical wellness and social awareness, every week.",
-    primary: { label: "See the Curriculum", href: "#explore" },
-    secondary: { label: "View the 26-Week Programme", href: "#schools" },
-    src: "/illustrations/hero-pillars-boy.png",
-    alt: "A child at a desk looks up thoughtfully, surrounded by five circles representing financial, emotional, physical, social and digital learning.",
-  },
-  {
-    eyebrow: "For Schools",
-    heading: (
-      <>
-        26 weeks of Curiosity,
-        <br />
-        <span className="text-teal">Growth and Discovery.</span>
-      </>
-    ),
-    copy: "Two free demo classes to begin. A full year of weekly experiences designed to engage, inspire and empower students.",
-    primary: { label: "Explore the Programme", href: "#schools" },
-    secondary: { label: "Book 2 Free Demo Classes", href: "#schools" },
-    src: "/illustrations/hero-journey.png",
-    alt: "A winding path connects a school, a calendar, a puzzle book, a globe and a child climbing stairs made of books toward a star.",
-  },
-  {
-    eyebrow: "Curiosity, Every Week",
-    heading: (
-      <>
-        Questions worth
-        <br />
-        <span className="text-teal">staying curious about.</span>
-      </>
-    ),
-    copy: "A new fact, question and challenge every week — the kind of thinking that actually sticks.",
-    primary: { label: "This Week's Curiosity", href: "#curiosity" },
-    secondary: { label: "Explore All Topics", href: "/explore" },
-    src: "/illustrations/hero-question.png",
-    alt: "A telescope, a magnifying glass over a lightbulb, an open book and a hot air balloon circle a large question mark.",
-  },
-  {
-    eyebrow: "A world of discovery, one week at a time",
-    heading: (
-      <>
-        Curious. <span className="text-teal">Knowledgeable.</span>
-        <br />
-        Ready for the real world.
-      </>
-    ),
-    copy: "Ikigyan helps children discover the world beyond textbooks — through a 26-week learning programme, books, activities and real-world knowledge that stays with them.",
-    primary: { label: "Explore the Programme", href: "#schools" },
-    secondary: { label: "Meet Educonomy", href: "#books" },
-    src: "/illustrations/hero-thinking-boy.png",
-    alt: "A child sits cross-legged on a giant open book, surrounded by a lightbulb, a rocket, a magnifying glass and a globe — imagining beyond the page.",
-  },
-];
+// Render a plain-text heading: "\n" becomes a line break, and the `highlight`
+// substring (if present) is drawn in the accent colour. Keeps the heading fully
+// editable as plain text in the CMS.
+function renderHeading(text: string, highlight?: string) {
+  return text.split("\n").map((line, li) => {
+    const idx = highlight ? line.indexOf(highlight) : -1;
+    return (
+      <Fragment key={li}>
+        {li > 0 && <br />}
+        {idx === -1 ? (
+          line
+        ) : (
+          <>
+            {line.slice(0, idx)}
+            <span className="text-teal">{highlight}</span>
+            {line.slice(idx + (highlight as string).length)}
+          </>
+        )}
+      </Fragment>
+    );
+  });
+}
 
 export default function Hero() {
   const [active, setActive] = useState(0);
@@ -111,7 +44,7 @@ export default function Hero() {
   useEffect(() => {
     timerRef.current = setInterval(
       () => setActive((a) => (a + 1) % SLIDES.length),
-      6000
+      AUTOPLAY_MS
     );
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -123,7 +56,7 @@ export default function Hero() {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(
       () => setActive((a) => (a + 1) % SLIDES.length),
-      6000
+      AUTOPLAY_MS
     );
   }
 
@@ -174,7 +107,7 @@ export default function Hero() {
             </span>
 
             <h1 className="font-display text-[11vw] leading-[1.02] tracking-[-0.02em] text-ink sm:text-[52px] md:text-[46px] lg:text-[58px] xl:text-[64px]">
-              {slide.heading}
+              {renderHeading(slide.heading, slide.highlight)}
             </h1>
 
             <p className="mt-7 max-w-md font-body text-[16px] leading-relaxed text-ink-soft md:text-[17px]">
@@ -183,21 +116,21 @@ export default function Hero() {
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
-                href={slide.primary.href}
-                {...(slide.primary.external ? { target: "_blank", rel: "noopener" } : {})}
+                href={slide.primaryHref}
+                {...(slide.primaryExternal ? { target: "_blank", rel: "noopener" } : {})}
                 className="rounded-full bg-ink px-6 py-3.5 font-body text-[14px] font-semibold text-cream shadow-[0_10px_30px_rgba(27,28,38,0.25)] transition-transform hover:-translate-y-0.5"
               >
-                {slide.primary.label}
+                {slide.primaryLabel}
               </a>
               <a
-                href={slide.secondary.href}
-                {...(slide.secondary.external ? { target: "_blank", rel: "noopener" } : {})}
+                href={slide.secondaryHref}
+                {...(slide.secondaryExternal ? { target: "_blank", rel: "noopener" } : {})}
                 className="group flex items-center gap-2 font-body text-[14px] font-semibold text-ink"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/20 transition-colors group-hover:border-teal group-hover:bg-teal group-hover:text-cream">
                   →
                 </span>
-                {slide.secondary.label}
+                {slide.secondaryLabel}
               </a>
             </div>
           </motion.div>
@@ -239,7 +172,7 @@ export default function Hero() {
         >
           {SLIDES.map((s, i) => (
             <motion.div
-              key={s.src}
+              key={s.image}
               className="absolute inset-0"
               style={{ x: shiftX, y: shiftY }}
               initial={false}
@@ -247,8 +180,8 @@ export default function Hero() {
               transition={{ duration: 0.9, ease: [0.65, 0, 0.35, 1] }}
             >
               <Image
-                src={s.src}
-                alt={s.alt}
+                src={s.image}
+                alt={s.imageAlt}
                 fill
                 priority={i === 0}
                 sizes="(max-width: 768px) 100vw, 50vw"

@@ -1,0 +1,75 @@
+{
+  "autoplaySeconds": 6,
+  "slides": [
+    {
+      "eyebrow": "Book 01 · Where Financial Confidence Begins",
+      "heading": "Give your child\na head start with money.",
+      "highlight": "head start",
+      "copy": "Educonomy turns saving, spending, earning and smart choices into an engaging story children will actually enjoy reading.",
+      "primaryLabel": "Order Educonomy",
+      "primaryHref": "#books",
+      "primaryExternal": false,
+      "secondaryLabel": "Order on WhatsApp",
+      "secondaryHref": "https://wa.me/919513464111",
+      "secondaryExternal": true,
+      "image": "/illustrations/hero-money-tree.png",
+      "imageAlt": "A tree growing rupee coins above an open book and a stack of coins beside an Ikigyan money pouch."
+    },
+    {
+      "eyebrow": "The Curriculum",
+      "heading": "One curriculum.\nFive real-world subjects.",
+      "highlight": "Five real-world subjects.",
+      "copy": "Financial literacy, mental & emotional wellbeing and digital awareness — taught side by side with physical wellness and social awareness, every week.",
+      "primaryLabel": "See the Curriculum",
+      "primaryHref": "#explore",
+      "primaryExternal": false,
+      "secondaryLabel": "View the 26-Week Programme",
+      "secondaryHref": "#schools",
+      "secondaryExternal": false,
+      "image": "/illustrations/hero-pillars-boy.png",
+      "imageAlt": "A child at a desk looks up thoughtfully, surrounded by five circles representing financial, emotional, physical, social and digital learning."
+    },
+    {
+      "eyebrow": "For Schools",
+      "heading": "26 weeks of Curiosity,\nGrowth and Discovery.",
+      "highlight": "Growth and Discovery.",
+      "copy": "Two free demo classes to begin. A full year of weekly experiences designed to engage, inspire and empower students.",
+      "primaryLabel": "Explore the Programme",
+      "primaryHref": "#schools",
+      "primaryExternal": false,
+      "secondaryLabel": "Book 2 Free Demo Classes",
+      "secondaryHref": "#schools",
+      "secondaryExternal": false,
+      "image": "/illustrations/hero-journey.png",
+      "imageAlt": "A winding path connects a school, a calendar, a puzzle book, a globe and a child climbing stairs made of books toward a star."
+    },
+    {
+      "eyebrow": "Curiosity, Every Week",
+      "heading": "Questions worth\nstaying curious about.",
+      "highlight": "staying curious about.",
+      "copy": "A new fact, question and challenge every week — the kind of thinking that actually sticks.",
+      "primaryLabel": "This Week's Curiosity",
+      "primaryHref": "#curiosity",
+      "primaryExternal": false,
+      "secondaryLabel": "Explore All Topics",
+      "secondaryHref": "/explore",
+      "secondaryExternal": false,
+      "image": "/illustrations/hero-question.png",
+      "imageAlt": "A telescope, a magnifying glass over a lightbulb, an open book and a hot air balloon circle a large question mark."
+    },
+    {
+      "eyebrow": "A world of discovery, one week at a time",
+      "heading": "Curious. Knowledgeable.\nReady for the real world.",
+      "highlight": "Knowledgeable.",
+      "copy": "Ikigyan helps children discover the world beyond textbooks — through a 26-week learning programme, books, activities and real-world knowledge that stays with them.",
+      "primaryLabel": "Explore the Programme",
+      "primaryHref": "#schools",
+      "primaryExternal": false,
+      "secondaryLabel": "Meet Educonomy",
+      "secondaryHref": "#books",
+      "secondaryExternal": false,
+      "image": "/illustrations/hero-thinking-boy.png",
+      "imageAlt": "A child sits cross-legged on a giant open book, surrounded by a lightbulb, a rocket, a magnifying glass and a globe — imagining beyond the page."
+    }
+  ]
+}

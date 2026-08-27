@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import { categories } from "@/lib/data";
+import explore from "@/content/pages/explore.json";
+
+const c = explore.categories;
 
 export default function ExploreCategories() {
   return (
@@ -12,19 +15,18 @@ export default function ExploreCategories() {
           <div className="max-w-xl">
             <Reveal>
               <p className="font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-teal">
-                Explore
+                {c.eyebrow}
               </p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="mt-5 font-display text-[32px] leading-[1.14] tracking-[-0.01em] text-ink text-balance sm:text-[40px] md:text-[46px]">
-                A knowledge universe children can wander into.
+                {c.heading}
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.12}>
             <p className="max-w-xs font-body text-[14.5px] leading-relaxed text-ink-soft">
-              Eight ways into the world — from the solar system to the
-              science hiding in your kitchen. New topics added every week.
+              {c.copy}
             </p>
           </Reveal>
         </div>

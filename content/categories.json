@@ -1,0 +1,12 @@
+{
+  "items": [
+    { "label": "Space & Science", "copy": "Planets, stars and the physics of everyday wonder." },
+    { "label": "Nature & Animals", "copy": "Ecosystems, creatures and the wild world outside." },
+    { "label": "Human Body & Mind", "copy": "How we grow, think, feel and heal." },
+    { "label": "History & Civilisations", "copy": "Stories of the people who came before us." },
+    { "label": "India & the World", "copy": "Culture, geography and global perspective." },
+    { "label": "Everyday Wonders", "copy": "The curious science hiding in ordinary things." },
+    { "label": "Logic & Mathematics", "copy": "Patterns, puzzles and the beauty of numbers." },
+    { "label": "Future & Technology", "copy": "AI, invention and what's coming next." }
+  ]
+}

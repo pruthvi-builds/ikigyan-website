@@ -1,0 +1,21 @@
+{
+  "header": {
+    "eyebrow": "For schools",
+    "title": "Bringing real-world learning into the classroom.",
+    "copy": "A structured 26-week programme that complements academic learning with essential life skills. Ikigyan gives teachers ready-to-use learning experiences, activities and resources that help children discover, think and apply knowledge beyond the textbook."
+  },
+  "journey": {
+    "image": "/illustrations/hero-journey.png",
+    "imageAlt": "A winding path connecting a school, a calendar, a puzzle book, a globe and a child climbing stairs made of books toward a star, illustrating the 26-week programme.",
+    "eyebrow": "The journey",
+    "heading": "The 26-week Ikigyan learning journey."
+  },
+  "included": {
+    "eyebrow": "What’s included",
+    "heading": "Everything a school needs to get started.",
+    "primaryLabel": "School Partnership Enquiry",
+    "primarySubject": "School Partnership Enquiry",
+    "secondaryLabel": "Book 2 Free Demo Classes",
+    "secondarySubject": "Book 2 Free Demo Classes"
+  }
+}

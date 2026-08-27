@@ -1,0 +1,10 @@
+{
+  "steps": [
+    { "name": "Discover", "detail": "A fact, story or object that opens a door — no lecture, just a spark." },
+    { "name": "Question", "detail": "Children ask what, why and what if, before anyone gives them an answer." },
+    { "name": "Think", "detail": "Space to reason it out loud, alone or with the group." },
+    { "name": "Solve", "detail": "A puzzle or activity that turns the idea into a small, real challenge." },
+    { "name": "Discuss", "detail": "Sharing thinking with others — where understanding actually sharpens." },
+    { "name": "Apply", "detail": "Carrying the idea into a real decision, at home or in the world." }
+  ]
+}

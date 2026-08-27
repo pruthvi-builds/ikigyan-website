@@ -1,0 +1,20 @@
+{
+  "eyebrow": "For parents",
+  "headingLead": "More than what they learn.",
+  "headingHighlight": "Who they become.",
+  "intro1": "Children don’t need another screen competing for their attention. They need experiences that help them think better, feel better and grow with confidence.",
+  "intro2": "At Ikigyan, every book, activity and learning experience is designed to build the skills that matter beyond the classroom.",
+  "image": "/illustrations/hero-pillars-boy.png",
+  "imageAlt": "A child looks up thoughtfully at desk, surrounded by five circles representing financial, emotional, physical, social and digital learning.",
+  "reasonsHeading": "Why parents choose Ikigyan",
+  "reasons": [
+    { "icon": "🧠", "label": "Builds the mind", "copy": "Helping children understand their thoughts, emotions, choices and strengths." },
+    { "icon": "💰", "label": "Prepares them for real life", "copy": "Making money, decision-making, responsibility and everyday life skills easier to understand." },
+    { "icon": "🌱", "label": "Develops healthy habits", "copy": "Encouraging physical wellbeing, self-care, discipline and balanced routines." },
+    { "icon": "🤝", "label": "Helps them navigate the world", "copy": "Building empathy, communication, respect, relationships and social responsibility." },
+    { "icon": "🔐", "label": "Designed with safety in mind", "copy": "Age-appropriate content, thoughtful experiences and minimal dependence on digital engagement." },
+    { "icon": "📚", "label": "Learning that goes beyond the screen", "copy": "Books, puzzles, activities and experiences children can explore independently or with their families." }
+  ],
+  "closingLead": "Because education isn’t only about getting ahead.",
+  "closingHighlight": "It’s about being ready for life."
+}

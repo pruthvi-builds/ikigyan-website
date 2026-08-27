@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import FAQ from "@/components/FAQ";
+import faq from "@/content/pages/faq.json";
 
 export const metadata: Metadata = {
   title: "FAQ — Ikigyan",
@@ -15,8 +16,8 @@ export default function FAQPage() {
       <Nav />
       <main className="flex-1">
         <PageHeader
-          eyebrow="FAQ"
-          title="Straight answers, before you have to ask."
+          eyebrow={faq.header.eyebrow}
+          title={faq.header.title}
         />
         <FAQ />
       </main>

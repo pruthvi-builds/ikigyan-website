@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import { videos } from "@/lib/data";
+import watch from "@/content/pages/watch.json";
 
 export const metadata: Metadata = {
   title: "Watch & Discover — Ikigyan",
@@ -16,9 +17,9 @@ export default function WatchPage() {
       <Nav />
       <main className="flex-1">
         <PageHeader
-          eyebrow="Watch & Discover"
-          title="A curated shelf, not an endless feed."
-          copy="Every video is hand-picked and age-tagged. Nothing autoplays. Nothing recommends itself next."
+          eyebrow={watch.header.eyebrow}
+          title={watch.header.title}
+          copy={watch.header.copy}
         />
 
         <section className="bg-cream pb-24">
@@ -57,7 +58,7 @@ export default function WatchPage() {
             <Reveal delay={0.2}>
               <div className="mt-14 rounded-[24px] border border-dashed border-line px-8 py-10 text-center">
                 <p className="font-display text-[19px] text-ink/60">
-                  New videos are added regularly — this shelf will keep growing.
+                  {watch.footnote}
                 </p>
               </div>
             </Reveal>

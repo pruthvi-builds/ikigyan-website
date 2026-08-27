@@ -1,4 +1,7 @@
 import Reveal from "./Reveal";
+import home from "@/content/pages/home.json";
+
+const c = home.finalCta;
 
 export default function FinalCTA() {
   return (
@@ -16,24 +19,21 @@ export default function FinalCTA() {
       <div className="container-narrow relative text-center">
         <Reveal>
           <p className="font-body text-[12px] font-semibold uppercase tracking-[0.18em] text-yellow">
-            The Ikigyan promise
+            {c.eyebrow}
           </p>
         </Reveal>
 
         <Reveal delay={0.08}>
           <h2 className="mt-6 font-display text-[15vw] leading-[1.05] tracking-[-0.01em] text-balance sm:text-[52px] md:text-[62px]">
-            Curiosity today.
+            {c.headingLead}
             <br />
-            <span className="text-yellow-soft">Capability for tomorrow.</span>
+            <span className="text-yellow-soft">{c.headingHighlight}</span>
           </h2>
         </Reveal>
 
         <Reveal delay={0.16}>
           <p className="mx-auto mt-7 max-w-lg font-body text-[16px] leading-relaxed text-cream/70">
-            Building children who are financially confident, emotionally
-            aware, physically healthy, socially responsible and digitally
-            ready. Ikigyan — helping children discover the world beyond
-            textbooks.
+            {c.copy}
           </p>
         </Reveal>
 
@@ -43,13 +43,13 @@ export default function FinalCTA() {
               href="#schools"
               className="rounded-full bg-yellow px-7 py-4 font-body text-[14.5px] font-semibold text-ink transition-transform hover:-translate-y-0.5"
             >
-              Bring Ikigyan to Your School
+              {c.primaryLabel}
             </a>
             <a
               href="#books"
               className="rounded-full border border-cream/25 px-7 py-4 font-body text-[14.5px] font-semibold text-cream transition-colors hover:border-cream/60"
             >
-              Order the Book
+              {c.secondaryLabel}
             </a>
           </div>
         </Reveal>

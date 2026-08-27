@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "slug": "educonomy",
+      "title": "Educonomy",
+      "subtitle": "Financial & Economic Awareness for Young Minds",
+      "tagline": "Where money meets real life.",
+      "headline": "From the story of money to managing your own.",
+      "introBadge": "Book 01 · Where Financial Confidence Begins",
+      "introStrapline": "Building money confidence and economic awareness from an early age.",
+      "introDescription": "Educonomy helps young minds understand money, choices and the world around them through simple, engaging lessons. It turns essential financial and economic ideas into practical knowledge children can use in everyday life.",
+      "image": "/illustrations/hero-money-tree.png",
+      "imageAlt": "A tree growing rupee coins above an open book and a stack of coins beside an Ikigyan money pouch.",
+      "shortDescription": "A simple introduction to money, banking and smart financial habits for children.",
+      "fullDescription": "Educonomy takes children beyond the basics of currency and introduces them to the world of money through stories, comics, activities and real-life situations.",
+      "closingLine": "Learn it. See it. Try it. Make smarter choices.",
+      "price": "Contact for pricing",
+      "badge": "Book 01",
+      "exploreTopics": [
+        { "icon": "🪙", "label": "The fascinating history of money" },
+        { "icon": "🏦", "label": "Banks, banking & how money moves" },
+        { "icon": "💳", "label": "Digital payments & modern money" },
+        { "icon": "📈", "label": "Saving, investing & smart choices" },
+        { "icon": "💰", "label": "Understanding and handling pocket money" },
+        { "icon": "🧠", "label": "Everyday money decisions and financial habits" }
+      ],
+      "details": [
+        "Age range: 8–13 years",
+        "Format: Illustrated paperback",
+        "Language: English",
+        "Available for classroom, library and bulk requirements"
+      ],
+      "audiences": [
+        { "label": "For Students", "copy": "Build confidence with money, choices and real-world thinking." },
+        { "label": "For Parents", "copy": "Make everyday money moments meaningful with simple ideas to explore together." },
+        { "label": "For Schools", "copy": "Available for classroom, library and bulk requirements." }
+      ]
+    }
+  ]
+}

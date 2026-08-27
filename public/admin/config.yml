@@ -1,0 +1,487 @@
+# ============================================================================
+#  Ikigyan content configuration for Sveltia CMS
+#  Docs: https://github.com/sveltia/sveltia-cms   (Decap-compatible config)
+#
+#  Editors visit  https://<your-site>/admin/  and sign in with GitHub.
+#  Every save is a commit to this repo on the `main` branch; Netlify then
+#  rebuilds and publishes the site automatically (usually within ~2 minutes).
+# ============================================================================
+
+backend:
+  name: github
+  repo: pruthvi-builds/ikigyan-website
+  branch: main
+  # GitHub sign-in is handled by this site's own Netlify functions
+  # (see /netlify/functions/oauth-*.js). If you move to a custom domain,
+  # update base_url to that domain.
+  base_url: https://ikigyan.netlify.app
+  auth_endpoint: /oauth/auth
+
+# Lets you run the editor against local files while developing:
+#   1) npm run dev           (in one terminal)
+#   2) npx @sveltia/cms-proxy-server   (in another)
+#   3) open http://localhost:3000/admin/
+local_backend: true
+
+media_folder: "public/illustrations"
+public_folder: "/illustrations"
+
+site_url: https://ikigyan.netlify.app
+display_url: https://ikigyan.netlify.app
+publish_mode: simple
+
+editor:
+  preview: false
+
+collections:
+  # ------------------------------------------------------------------ Settings
+  - name: settings
+    label: "Site & Contact"
+    delete: false
+    files:
+      - name: site
+        label: "Contact & footer"
+        file: "content/site.json"
+        fields:
+          - name: contact
+            label: "Contact details"
+            widget: object
+            fields:
+              - { name: phone, label: "Phone (with country code, e.g. +919513464111)", widget: string }
+              - { name: whatsapp, label: "WhatsApp number — digits only, e.g. 919513464111", widget: string }
+              - { name: email, label: "Email address", widget: string }
+          - { name: footerTagline, label: "Footer tagline", widget: string }
+          - { name: footerSignoff, label: "Footer sign-off line", widget: string }
+          - name: social
+            label: "Social links"
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: "Network", widget: select, options: ["Instagram", "Facebook", "YouTube", "LinkedIn"] }
+              - { name: href, label: "Profile URL (use # to hide)", widget: string }
+
+  # ------------------------------------------------------------------ Homepage
+  - name: home
+    label: "Homepage"
+    delete: false
+    files:
+      - name: hero
+        label: "Hero carousel"
+        file: "content/hero.json"
+        fields:
+          - { name: autoplaySeconds, label: "Seconds each slide is shown", widget: number, value_type: int, min: 2, default: 6 }
+          - name: slides
+            label: "Slides"
+            label_singular: "Slide"
+            widget: list
+            summary: "{{fields.eyebrow}}"
+            fields:
+              - { name: eyebrow, label: "Small label above the heading", widget: string }
+              - { name: heading, label: "Heading (press Enter for a line break)", widget: text }
+              - { name: highlight, label: "Part of the heading to colour teal (must match text exactly, optional)", widget: string, required: false }
+              - { name: copy, label: "Supporting paragraph", widget: text }
+              - { name: primaryLabel, label: "Main button — text", widget: string }
+              - { name: primaryHref, label: "Main button — link", widget: string }
+              - { name: primaryExternal, label: "Main button opens in a new tab", widget: boolean, default: false }
+              - { name: secondaryLabel, label: "Second button — text", widget: string }
+              - { name: secondaryHref, label: "Second button — link", widget: string }
+              - { name: secondaryExternal, label: "Second button opens in a new tab", widget: boolean, default: false }
+              - { name: image, label: "Illustration", widget: image }
+              - { name: imageAlt, label: "Image description (for accessibility)", widget: string }
+
+      - name: sections
+        label: "Homepage section copy"
+        file: "content/pages/home.json"
+        fields:
+          - name: whatIs
+            label: "“What is Ikigyan” block"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: headingLead, label: "Heading — first part", widget: string }
+              - { name: headingHighlight, label: "Heading — teal part", widget: string }
+              - { name: para1, label: "Paragraph 1", widget: text }
+              - { name: para2, label: "Paragraph 2", widget: text }
+              - name: stats
+                label: "Three stats"
+                widget: list
+                max: 3
+                summary: "{{fields.n}} {{fields.u}}"
+                fields:
+                  - { name: n, label: "Number", widget: string }
+                  - { name: u, label: "Unit", widget: string }
+                  - { name: d, label: "Description", widget: string }
+          - name: exploreTeaser
+            label: "“Explore” teaser"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: heading, label: "Heading", widget: string }
+              - { name: ctaLabel, label: "Link text", widget: string }
+          - name: schoolsHome
+            label: "“For schools” band"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: heading, label: "Heading", widget: string }
+              - { name: copy, label: "Paragraph", widget: text }
+              - { name: primaryLabel, label: "Main button text", widget: string }
+              - { name: secondaryLabel, label: "Second link text", widget: string }
+              - name: facts
+                label: "Three facts"
+                widget: list
+                max: 3
+                summary: "{{fields.n}} {{fields.u}}"
+                fields:
+                  - { name: n, label: "Number", widget: string }
+                  - { name: u, label: "Unit", widget: string }
+                  - { name: d, label: "Description", widget: string }
+          - name: booksHome
+            label: "“Books” teaser"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: heading, label: "Heading", widget: string }
+              - { name: ctaLabel, label: "Link text", widget: string }
+          - name: watchDiscover
+            label: "“Watch & Discover” teaser"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: heading, label: "Heading", widget: string }
+              - { name: ctaLabel, label: "Link text", widget: string }
+          - name: finalCta
+            label: "Closing call-to-action"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: headingLead, label: "Heading — first line", widget: string }
+              - { name: headingHighlight, label: "Heading — highlighted line", widget: string }
+              - { name: copy, label: "Paragraph", widget: text }
+              - { name: primaryLabel, label: "Main button text", widget: string }
+              - { name: secondaryLabel, label: "Second button text", widget: string }
+
+  # ------------------------------------------------------------------ Books
+  - name: books
+    label: "Books"
+    delete: false
+    files:
+      - name: books
+        label: "All books"
+        file: "content/books.json"
+        fields:
+          - name: items
+            label: "Books"
+            label_singular: "Book"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: "Title", widget: string }
+              - { name: slug, label: "Slug (lowercase, no spaces — used in the web address)", widget: string }
+              - { name: subtitle, label: "Subtitle", widget: string }
+              - { name: tagline, label: "Tagline (short line above the title)", widget: string }
+              - { name: headline, label: "Headline (large line on the Books page)", widget: string }
+              - { name: badge, label: "Badge, e.g. “Book 01”", widget: string }
+              - { name: price, label: "Price line", widget: string }
+              - { name: image, label: "Cover / illustration", widget: image }
+              - { name: imageAlt, label: "Image description", widget: string }
+              - { name: introBadge, label: "Intro block — badge", widget: string }
+              - { name: introStrapline, label: "Intro block — strapline", widget: string }
+              - { name: introDescription, label: "Intro block — description", widget: text }
+              - { name: shortDescription, label: "Short description (homepage card)", widget: text }
+              - { name: fullDescription, label: "Full description (Books page)", widget: text }
+              - { name: closingLine, label: "Closing line", widget: string }
+              - name: exploreTopics
+                label: "“Explore” topics"
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { name: icon, label: "Emoji", widget: string }
+                  - { name: label, label: "Topic", widget: string }
+              - name: details
+                label: "Details bullets"
+                widget: list
+                field: { name: item, label: "Line", widget: string }
+              - name: audiences
+                label: "Audience columns"
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { name: label, label: "Heading", widget: string }
+                  - { name: copy, label: "Text", widget: text }
+
+  # ------------------------------------------------------------------ Videos
+  - name: videos
+    label: "Watch shelf (videos)"
+    delete: false
+    files:
+      - name: videos
+        label: "Video list"
+        file: "content/videos.json"
+        fields:
+          - name: items
+            label: "Videos"
+            label_singular: "Video"
+            widget: list
+            summary: "{{fields.topic}}"
+            fields:
+              - { name: topic, label: "Title", widget: string }
+              - { name: source, label: "Source line, e.g. “Curated · TED-Ed”", widget: string }
+              - { name: age, label: "Age tag, e.g. “Ages 7–11”", widget: string }
+              - { name: category, label: "Category", widget: string }
+
+  # ------------------------------------------------------------------ FAQ
+  - name: faq
+    label: "FAQ"
+    delete: false
+    files:
+      - name: faqs
+        label: "Questions & answers"
+        file: "content/faqs.json"
+        fields:
+          - name: items
+            label: "FAQ entries"
+            label_singular: "Question"
+            widget: list
+            summary: "{{fields.q}}"
+            fields:
+              - { name: q, label: "Question", widget: string }
+              - { name: a, label: "Answer", widget: text }
+      - name: page
+        label: "FAQ page text"
+        file: "content/pages/faq.json"
+        fields:
+          - name: header
+            label: "Page header"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: title, label: "Title", widget: string }
+          - name: section
+            label: "Section text"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: heading, label: "Heading", widget: string }
+              - { name: helpPrefix, label: "“Still need help?” line — before the link", widget: string }
+              - { name: helpLinkLabel, label: "Link text", widget: string }
+              - { name: helpSuffix, label: "Line — after the link", widget: string }
+
+  # ------------------------------------------------------------------ Explore
+  - name: explore
+    label: "Explore page"
+    delete: false
+    files:
+      - name: pillars
+        label: "The 5 pillars"
+        file: "content/pillars.json"
+        fields:
+          - name: items
+            label: "Pillars"
+            label_singular: "Pillar"
+            widget: list
+            max: 5
+            min: 5
+            summary: "{{fields.label}}"
+            fields:
+              - { name: key, label: "Icon", widget: select, options: ["financial", "emotional", "physical", "social", "digital"] }
+              - { name: label, label: "Name", widget: string }
+              - { name: outcome, label: "Outcome tag, e.g. “Money Smart”", widget: string }
+              - { name: copy, label: "Description", widget: text }
+      - name: categories
+        label: "Knowledge categories"
+        file: "content/categories.json"
+        fields:
+          - name: items
+            label: "Categories"
+            label_singular: "Category"
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: "Name", widget: string }
+              - { name: copy, label: "Description", widget: string }
+      - name: page
+        label: "Explore page text"
+        file: "content/pages/explore.json"
+        fields:
+          - name: header
+            label: "Page header"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: copy, label: "Intro paragraph", widget: text }
+          - name: pillars
+            label: "Pillars section text"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: heading, label: "Heading", widget: string }
+              - { name: footnote, label: "Footnote line", widget: string }
+          - name: categories
+            label: "Categories section text"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: heading, label: "Heading", widget: string }
+              - { name: copy, label: "Paragraph", widget: text }
+
+  # ------------------------------------------------------------------ Schools
+  - name: schools
+    label: "Schools page"
+    delete: false
+    files:
+      - name: programme
+        label: "26-week programme"
+        file: "content/programme.json"
+        fields:
+          - name: steps
+            label: "Journey steps"
+            label_singular: "Step"
+            widget: list
+            summary: "{{fields.n}} — {{fields.title}}"
+            fields:
+              - { name: n, label: "Number, e.g. “01”", widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: copy, label: "Description", widget: text }
+          - name: offer
+            label: "“What’s included” list"
+            widget: list
+            field: { name: item, label: "Line", widget: string }
+      - name: page
+        label: "Schools page text"
+        file: "content/pages/schools.json"
+        fields:
+          - name: header
+            label: "Page header"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: copy, label: "Intro paragraph", widget: text }
+          - name: journey
+            label: "Journey section"
+            widget: object
+            fields:
+              - { name: image, label: "Illustration", widget: image }
+              - { name: imageAlt, label: "Image description", widget: string }
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: heading, label: "Heading", widget: string }
+          - name: included
+            label: "“What’s included” section"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: heading, label: "Heading", widget: string }
+              - { name: primaryLabel, label: "Main button — text", widget: string }
+              - { name: primarySubject, label: "Main button — email subject", widget: string }
+              - { name: secondaryLabel, label: "Second button — text", widget: string }
+              - { name: secondarySubject, label: "Second button — email subject", widget: string }
+
+  # ------------------------------------------------------------------ Watch page
+  - name: watch
+    label: "Watch page text"
+    delete: false
+    files:
+      - name: page
+        label: "Watch page text"
+        file: "content/pages/watch.json"
+        fields:
+          - name: header
+            label: "Page header"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: copy, label: "Intro paragraph", widget: text }
+          - { name: footnote, label: "Footnote line under the grid", widget: string }
+
+  # ------------------------------------------------------------------ Books page text
+  - name: booksPage
+    label: "Books page text"
+    delete: false
+    files:
+      - name: page
+        label: "Books page text"
+        file: "content/pages/books.json"
+        fields:
+          - name: header
+            label: "Page header"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: copy, label: "Intro paragraph", widget: text }
+          - { name: footnote, label: "Footnote line", widget: string }
+
+  # ------------------------------------------------------------------ Parents
+  - name: parents
+    label: "Parents section"
+    delete: false
+    files:
+      - name: parents
+        label: "Parents section"
+        file: "content/parents.json"
+        fields:
+          - { name: eyebrow, label: "Small label", widget: string }
+          - { name: headingLead, label: "Heading — first line", widget: string }
+          - { name: headingHighlight, label: "Heading — teal line", widget: string }
+          - { name: intro1, label: "Paragraph 1", widget: text }
+          - { name: intro2, label: "Paragraph 2", widget: text }
+          - { name: image, label: "Illustration", widget: image }
+          - { name: imageAlt, label: "Image description", widget: string }
+          - { name: reasonsHeading, label: "“Why parents choose Ikigyan” label", widget: string }
+          - name: reasons
+            label: "Reason cards"
+            label_singular: "Reason"
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { name: icon, label: "Emoji", widget: string }
+              - { name: label, label: "Title", widget: string }
+              - { name: copy, label: "Text", widget: text }
+          - { name: closingLead, label: "Closing line — first part", widget: string }
+          - { name: closingHighlight, label: "Closing line — teal part", widget: string }
+
+  # ------------------------------------------------------------------ Method / Weekly
+  - name: extras
+    label: "Method & weekly cards"
+    delete: false
+    files:
+      - name: method
+        label: "Learning method steps"
+        file: "content/method.json"
+        fields:
+          - name: steps
+            label: "Steps"
+            label_singular: "Step"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: "Name, e.g. “Discover”", widget: string }
+              - { name: detail, label: "Description", widget: text }
+      - name: weekly
+        label: "Weekly cards (Did you know / Curiosity / Puzzle)"
+        file: "content/weekly.json"
+        fields:
+          - { name: eyebrow, label: "Small label", widget: string }
+          - { name: heading, label: "Heading", widget: string }
+          - name: didYouKnow
+            label: "Did You Know? card"
+            widget: object
+            fields:
+              - { name: question, label: "Question", widget: text }
+              - { name: answer, label: "Answer", widget: text }
+          - name: curiosity
+            label: "Curiosity of the Week card"
+            widget: object
+            fields:
+              - { name: question, label: "Question", widget: text }
+              - { name: note, label: "Small note under it", widget: text }
+          - name: puzzle
+            label: "Puzzle of the Week card"
+            widget: object
+            fields:
+              - { name: question, label: "Puzzle", widget: text }
+              - { name: hint, label: "Hint", widget: string }
+              - { name: answer, label: "Answer", widget: string }

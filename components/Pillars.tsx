@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 import Reveal from "./Reveal";
 import { pillars } from "@/lib/data";
+import explore from "@/content/pages/explore.json";
+
+const c = explore.pillars;
 
 const ICONS: Record<string, ReactNode> = {
   financial: (
@@ -42,12 +45,12 @@ export default function Pillars() {
         <div className="max-w-2xl">
           <Reveal>
             <p className="font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-teal">
-              What children explore
+              {c.eyebrow}
             </p>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mt-5 font-display text-[32px] leading-[1.14] tracking-[-0.01em] text-ink text-balance sm:text-[40px] md:text-[46px]">
-              Five ways to understand the world, side by side.
+              {c.heading}
             </h2>
           </Reveal>
         </div>
@@ -93,8 +96,7 @@ export default function Pillars() {
 
         <Reveal delay={0.2} className="mt-10 text-center">
           <p className="font-display text-[19px] text-ink/70 md:text-[22px]">
-            Money Smart · Mind Strong · Healthy Living · Better Together ·
-            Future Ready.
+            {c.footnote}
           </p>
         </Reveal>
       </div>

@@ -3,19 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "./Reveal";
-import { method } from "@/lib/data";
-
-const DETAIL: Record<(typeof method)[number], string> = {
-  Discover: "A fact, story or object that opens a door — no lecture, just a spark.",
-  Question: "Children ask what, why and what if, before anyone gives them an answer.",
-  Think: "Space to reason it out loud, alone or with the group.",
-  Solve: "A puzzle or activity that turns the idea into a small, real challenge.",
-  Discuss: "Sharing thinking with others — where understanding actually sharpens.",
-  Apply: "Carrying the idea into a real decision, at home or in the world.",
-};
+import { methodSteps } from "@/lib/data";
 
 export default function DiscoverMethod() {
-  const [active, setActive] = useState<(typeof method)[number]>("Discover");
+  const [active, setActive] = useState(0);
+  const current = methodSteps[active];
 
   return (
     <section className="relative overflow-hidden bg-teal-deep py-16 text-cream md:py-24 lg:py-32">
@@ -47,12 +39,12 @@ export default function DiscoverMethod() {
         <div className="mt-16 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-16">
           <Reveal delay={0.15}>
             <ol className="flex flex-col">
-              {method.map((step, i) => {
-                const isActive = active === step;
+              {methodSteps.map((step, i) => {
+                const isActive = active === i;
                 return (
-                  <li key={step}>
+                  <li key={step.name}>
                     <button
-                      onClick={() => setActive(step)}
+                      onClick={() => setActive(i)}
                       className="flex w-full items-center gap-5 border-t border-cream/15 py-5 text-left last:border-b"
                     >
                       <span
@@ -67,7 +59,7 @@ export default function DiscoverMethod() {
                           isActive ? "text-cream" : "text-cream/45"
                         }`}
                       >
-                        {step}
+                        {step.name}
                       </span>
                       <motion.span
                         animate={{ x: isActive ? 0 : -6, opacity: isActive ? 1 : 0 }}
@@ -93,13 +85,13 @@ export default function DiscoverMethod() {
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 >
                   <span className="font-display text-[13px] text-yellow">
-                    Step {method.indexOf(active) + 1} of {method.length}
+                    Step {active + 1} of {methodSteps.length}
                   </span>
                   <p className="mt-3 font-display text-[26px] leading-snug text-cream md:text-[30px]">
-                    {active}.
+                    {current.name}.
                   </p>
                   <p className="mt-4 max-w-md font-body text-[15.5px] leading-relaxed text-cream/70">
-                    {DETAIL[active]}
+                    {current.detail}
                   </p>
                 </motion.div>
               </AnimatePresence>

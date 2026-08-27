@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import { books, CONTACT } from "@/lib/data";
+import booksCopy from "@/content/pages/books.json";
 
 export const metadata: Metadata = {
   title: "Books — Ikigyan",
@@ -17,9 +18,9 @@ export default function BooksPage() {
       <Nav />
       <main className="flex-1">
         <PageHeader
-          eyebrow="Books"
-          title="Real-world knowledge, made for young minds."
-          copy="Beautifully made books that bring one real-world subject to life at a time. Our publishing journey begins with Educonomy — more titles are on their way."
+          eyebrow={booksCopy.header.eyebrow}
+          title={booksCopy.header.title}
+          copy={booksCopy.header.copy}
         />
 
         <section className="bg-cream pb-24">
@@ -145,7 +146,7 @@ export default function BooksPage() {
             <Reveal delay={0.2}>
               <div className="rounded-[24px] border border-dashed border-line px-8 py-10 text-center">
                 <p className="font-display text-[19px] text-ink/60">
-                  More books exploring essential life knowledge are coming.
+                  {booksCopy.footnote}
                 </p>
               </div>
             </Reveal>

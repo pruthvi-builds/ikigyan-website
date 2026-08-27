@@ -1,5 +1,8 @@
 import Reveal from "./Reveal";
 import { pillars } from "@/lib/data";
+import home from "@/content/pages/home.json";
+
+const c = home.exploreTeaser;
 
 export default function ExploreTeaser() {
   return (
@@ -9,12 +12,12 @@ export default function ExploreTeaser() {
           <div className="max-w-xl">
             <Reveal>
               <p className="font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-teal">
-                What children explore
+                {c.eyebrow}
               </p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="mt-4 font-display text-[26px] leading-[1.16] tracking-[-0.01em] text-ink text-balance sm:text-[30px]">
-                Five ways to understand the world, side by side.
+                {c.heading}
               </h2>
             </Reveal>
           </div>
@@ -24,7 +27,7 @@ export default function ExploreTeaser() {
               href="/explore"
               className="inline-flex w-fit shrink-0 items-center gap-2 rounded-full border border-ink/15 px-5 py-3 font-body text-[13.5px] font-semibold text-ink transition-colors hover:border-teal hover:text-teal"
             >
-              View More <span aria-hidden>→</span>
+              {c.ctaLabel} <span aria-hidden>→</span>
             </a>
           </Reveal>
         </div>
