@@ -14,7 +14,7 @@ backend:
   # GitHub sign-in is handled by this site's own Netlify functions
   # (see /netlify/functions/oauth-*.js). If you move to a custom domain,
   # update base_url to that domain.
-  base_url: https://ikigyan.netlify.app
+  base_url: https://ikigyan.com
   auth_endpoint: /oauth/auth
 
 # Lets you run the editor against local files while developing:
@@ -26,8 +26,8 @@ local_backend: true
 media_folder: "public/illustrations"
 public_folder: "/illustrations"
 
-site_url: https://ikigyan.netlify.app
-display_url: https://ikigyan.netlify.app
+site_url: https://ikigyan.com
+display_url: https://ikigyan.com
 publish_mode: simple
 
 editor:

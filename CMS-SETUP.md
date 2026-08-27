@@ -41,8 +41,8 @@ directly on GitHub.
    (or org settings if the repo is under an org).
 2. Fill in:
    - **Application name:** `Ikigyan CMS`
-   - **Homepage URL:** `https://ikigyan.netlify.app` (or your custom domain)
-   - **Authorization callback URL:** `https://ikigyan.netlify.app/oauth/callback`
+   - **Homepage URL:** `https://ikigyan.com` (or your custom domain)
+   - **Authorization callback URL:** `https://ikigyan.com/oauth/callback`
      *(must match the site domain exactly; update later if the domain changes)*
 3. **Register application**, then **Generate a new client secret**.
 4. Keep the **Client ID** and **Client secret** handy.
@@ -66,7 +66,7 @@ account they need — no separate CMS login.
 
 ### 4. Done
 
-Editors go to **`https://ikigyan.netlify.app/admin/`**, click **Sign in with
+Editors go to **`https://ikigyan.com/admin/`**, click **Sign in with
 GitHub**, and start editing. Saving publishes automatically.
 
 > If you switch to a custom domain later, update three things to the new domain:
